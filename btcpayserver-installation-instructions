@@ -1,6 +1,9 @@
-# PRE-REQUISITE(!) - YOU REALLY OUGHT TO DO THIS, MAKES THINGS MUCH SMOOTHER
+# PRE-REQUISITE(!) - YOU REALLY OUGHT TO DO THIS STEP, MAKES THINGS MUCH SMOOTHER:
+
 # You need a valid DNS record pointing to pay.bitcoin-yhdistys.fi in order to be able to self-sign the certificate
 # Add an A-record to your DNS service provider for your domain pointing to your IP
+
+# INSTRUCTIONS BELOW:
 
 # Install git
 sudo apt-get install git
