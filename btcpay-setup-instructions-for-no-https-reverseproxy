@@ -1,0 +1,30 @@
+# We are installing a btcpayserver behind a reverse-proxy that is being setup elsewhere
+
+# INSTRUCTIONS BELOW:
+
+# Install git
+sudo apt-get install git
+
+# Login as root (You could probably do this non-sudo as well, but that would require tweaking with docker rights etc, etc... sudoing makes things way easier)
+sudo su -
+
+# Clone the btcpayserver docker repository
+git clone https://github.com/btcpayserver/btcpayserver-docker
+cd btcpayserver-docker
+
+# Run btcpay-setup.sh to install with the right parameters
+# Namely 
+# 1. disable https as we are using an existing reverse proxy for handling https certificates and
+# 2. limit disk size requirements to save costs 
+export BTCPAY_HOST="pay1.bitcoin-yhdistys.fi"
+export NBITCOIN_NETWORK="mainnet"
+export BTCPAYGEN_CRYPTO1="btc"
+export BTCPAYGEN_REVERSEPROXY="nginx"
+export BTCPAYGEN_LIGHTNING="lnd"
+export BTCPAY_ENABLE_SSH=false
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs"
+export BTCPAYGEN_EXCLUDE_FRAGMENTS="nginx-https"
+
+. ./btcpay-setup.sh -i
+
+# DONE!
