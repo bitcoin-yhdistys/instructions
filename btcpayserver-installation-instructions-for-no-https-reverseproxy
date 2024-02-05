@@ -16,7 +16,8 @@ cd btcpayserver-docker
 # Namely 
 # 1. disable https as we are using an existing reverse proxy for handling https certificates and
 # 2. limit disk size requirements to save costs 
-export BTCPAY_HOST="pay1.bitcoin-yhdistys.fi"
+export BTCPAY_HOST="maksut.bitcoin-yhdistys.fi"
+export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_REVERSEPROXY="nginx"
