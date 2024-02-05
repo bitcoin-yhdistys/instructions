@@ -23,6 +23,7 @@ export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_LIGHTNING="lnd"
 export BTCPAY_ENABLE_SSH=false
+export BTCPAY_PROTOCOL="http"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs"
 export BTCPAYGEN_EXCLUDE_FRAGMENTS="nginx-https"
 
